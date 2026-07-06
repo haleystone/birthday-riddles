@@ -1,6 +1,86 @@
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-/>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <title>Place + Time Guesser</title>
+
+  <link rel="stylesheet" href="places.css" />
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+</head>
+
+<body>
+  <main class="game">
+    <h1>Place + Time Guesser</h1>
+    <p class="subtitle">Guess where and when the photo was taken.</p>
+
+    <p id="round-info" class="round-info">Round 1</p>
+
+    <section class="photo-map-layout">
+      <div class="photo-card">
+        <img id="place-image" src="" alt="Important place" />
+      </div>
+
+      <div class="map-card">
+        <div id="map"></div>
+      </div>
+    </section>
+
+    <section class="guess-card">
+      <div class="date-inputs">
+        <label>
+          Month
+          <select id="month-guess">
+            <option value="">Choose month</option>
+            <option value="January">January</option>
+            <option value="February">February</option>
+            <option value="March">March</option>
+            <option value="April">April</option>
+            <option value="May">May</option>
+            <option value="June">June</option>
+            <option value="July">July</option>
+            <option value="August">August</option>
+            <option value="September">September</option>
+            <option value="October">October</option>
+            <option value="November">November</option>
+            <option value="December">December</option>
+          </select>
+        </label>
+
+        <label>
+          Year
+          <input id="year-guess" type="number" placeholder="e.g. 2024" />
+        </label>
+      </div>
+
+      <button id="submit-guess">Submit guess</button>
+
+      <div id="message" class="message"></div>
+    </section>
+
+    <section id="result-card" class="result-card">
+      <h2>Result</h2>
+
+      <p id="correct-place" class="result-detail"></p>
+      <p id="distance-result" class="result-detail"></p>
+      <p id="date-result" class="result-detail"></p>
+      <p id="score-result" class="result-detail"></p>
+
+      <button id="next-round">Next round</button>
+    </section>
+
+    <section id="final-message" class="final-message">
+      <h2>You finished the place game!</h2>
+      <p>Birthday geography nonsense complete.</p>
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="places.js"></script>
+</body>
+</html>
