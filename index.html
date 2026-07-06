@@ -1,11 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Birthday Riddles</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Birthday Connections</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <h1>Happy Birthday!</h1>
-  <p>This is where the riddles will go.</p>
+  <main class="game">
+    <h1> Connections</h1>
+    <p class="subtitle">Find the four hidden groups of four.</p>
+
+    <div id="solved-area" class="solved-area"></div>
+
+    <div id="grid" class="grid"></div>
+
+    <div class="controls">
+      <button id="submit-button">Submit</button>
+      <button id="deselect-button" class="secondary">Deselect</button>
+      <button id="shuffle-button" class="secondary">Shuffle</button>
+    </div>
+
+    <div id="message" class="message"></div>
+    <div id="mistakes" class="mistakes">Mistakes: 0</div>
+
+    <div id="final-message" class="final-message">
+      <h2>You solved it!</h2>
+      <p>Happy birthday. You are officially excellent at animal nonsense.</p>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
