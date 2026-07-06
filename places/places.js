@@ -1,11 +1,11 @@
 const rounds = [
   {
-    image: "images/sydney.jpg",
-    placeName: "Sydney",
-    latitude: -33.8688,
-    longitude: 151.2093,
+    image: "images/littlem.png",
+    placeName: "The Little Marionette",
+    latitude: -33.91699418928862, 
+    longitude: 151.23492268042054,
     month: "March",
-    year: "2023"
+    year: "2022"
   },
   {
     image: "images/glasgow.jpg",
