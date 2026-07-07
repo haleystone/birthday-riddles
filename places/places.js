@@ -1,7 +1,7 @@
 const rounds = [
   {
     image: "images/littlem.png",
-    placeName: "The Little Marionette",
+    placeName: "The Little Marionette- where we first met",
     latitude: -33.91699418928862,
     longitude: 151.23492268042054,
     month: "March",
@@ -9,11 +9,27 @@ const rounds = [
   },
   {
     image: "images/library.png",
-    placeName: "Lionel Bowen Library",
+    placeName: "Lionel Bowen Library-where we declared our relationship",
     latitude: -33.93814942489405, 
     longitude: 151.2381681981487,
     month: "July",
     year: "2024"
+  }
+  {
+    image: "images/kangaroovalley.jpg",
+    placeName: "Kangaroo Valley- Our first trip together",
+    latitude: -34.72671865078512, 150.52079187797955 
+    longitude: 150.52079187797955,
+    month: "December",
+    year: "2022"
+  }
+{
+    image: "images/travelscotland.jpg",
+    placeName: "Edinburgh- Our first trip in Scotland together",
+    latitude: 55.953318634834204,  
+    longitude: -3.193068329311077,
+    month: "September",
+    year: "2025"
   }
 ];
 
