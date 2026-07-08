@@ -12,7 +12,7 @@ const rounds = [
     placeName: "Lionel Bowen Library - where we declared our relationship",
     latitude: -33.93814942489405,
     longitude: 151.2381681981487,
-    month: "July",
+    month: "May",
     year: "2024"
   },
   {
