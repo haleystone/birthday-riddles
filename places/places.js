@@ -24,7 +24,7 @@ const rounds = [
     year: "2022"
   },
   {
-    image: "images/travelscotland.jpg",
+    image: "images/travelscotland.jpeg",
     placeName: "Edinburgh - our first trip in Scotland together",
     latitude: 55.953318634834204,
     longitude: -3.193068329311077,
