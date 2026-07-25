@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Birthday Crossword</title>
+  <link rel="stylesheet" href="crossword.css" />
+</head>
+
+<body>
+  <main class="game">
+    <h1>Birthday Crossword</h1>
+    <p class="subtitle">Fill in the crossword. Spaces and hyphens are ignored.</p>
+
+    <section class="crossword-layout">
+      <div id="crossword" class="crossword"></div>
+
+      <div class="clues">
+        <h2>Across</h2>
+        <ol id="across-clues"></ol>
+
+        <h2>Down</h2>
+        <ol id="down-clues"></ol>
+      </div>
+    </section>
+
+    <div class="controls">
+      <button id="check-button">Check answers</button>
+      <button id="clear-button" class="secondary">Clear</button>
+    </div>
+
+    <p id="message" class="message"></p>
+
+    <section id="final-message" class="final-message">
+      <h2>Crossword complete!</h2>
+      <p>You have survived the birthday puzzle gauntlet.</p>
+    </section>
+  </main>
+
+  <script src="crossword.js"></script>
+</body>
+</html>
