@@ -5,7 +5,8 @@ const entries = [
     row: 4,
     col: 9,
     answer: "WOBBUFFET",
-    clue: "why? why not?"
+    clue: "why? why not?",
+    icon: "clues/why.jpeg"
   },
   {
     number: 2,
@@ -13,7 +14,8 @@ const entries = [
     row: 1,
     col: 12,
     answer: "GREGORY",
-    clue: "pixilated grasshopper"
+    clue: "pixilated grasshopper",
+    icon: "clues/gregory.jpeg"
   },
   {
     number: 3,
@@ -21,7 +23,8 @@ const entries = [
     row: 2,
     col: 11,
     answer: "GROUDON",
-    clue: "Where is ____?"
+    clue: "Where is ____?",
+    icon: "clues/waldo.jpeg"
   },
   {
     number: 4,
@@ -29,7 +32,8 @@ const entries = [
     row: 7,
     col: 2,
     answer: "SPARERIBS",
-    clue: "what is a skeleton's favourite snack?"
+    clue: "what is a skeleton's favourite snack?",
+    icon: "clues/skeleton.jpeg"
   },
   {
     number: 5,
@@ -37,7 +41,8 @@ const entries = [
     row: 4,
     col: 15,
     answer: "LEBRON",
-    clue: "move that made ___ cry"
+    clue: "move that made ___ cry",
+    icon: "clues/basketball.jpeg"
   },
   {
     number: 6,
@@ -45,7 +50,8 @@ const entries = [
     row: 10,
     col: 4,
     answer: "BAG",
-    clue: "what kind of ___ is that?"
+    clue: "what kind of ___ is that?",
+    icon: "clues/bag.jpeg"
   },
   {
     number: 7,
@@ -53,7 +59,8 @@ const entries = [
     row: 7,
     col: 17,
     answer: "THREE",
-    clue: "every __ months a person is torn to pieces by a crocodile in North Queensland"
+    clue: "every __ months a person is torn to pieces by a crocodile in North Queensland",
+    icon: "clues/bob.jpeg"
   },
   {
     number: 8,
@@ -61,7 +68,8 @@ const entries = [
     row: 0,
     col: 16,
     answer: "FOOD",
-    clue: "In the mood, for ____"
+    clue: "In the mood, for ____",
+    icon: "clues/pooh.jpeg"
   },
   {
     number: 9,
@@ -69,7 +77,8 @@ const entries = [
     row: 12,
     col: 6,
     answer: "TOOTHLESS",
-    clue: "year of the dragon dance meme"
+    clue: "year of the dragon dance meme",
+    icon: "clues/toothless.jpeg"
   },
   {
     number: 10,
@@ -77,7 +86,8 @@ const entries = [
     row: 5,
     col: 6,
     answer: "TIEFIGHTERS",
-    clue: "Two ______ share a romantic dinner"
+    clue: "Two ______ share a romantic dinner",
+    icon: "clues/date.jpeg"
   },
   {
     number: 11,
@@ -85,7 +95,8 @@ const entries = [
     row: 7,
     col: 2,
     answer: "SPLAT",
-    clue: "cool, moist, and away from aquatic predators. The mud is the perfect place for clodsire to raise their young"
+    clue: "cool, moist, and away from aquatic predators. The mud is the perfect place for clodsire to raise their young",
+    icon: "clues/mud.jpeg"
   },
   {
     number: 12,
@@ -93,7 +104,8 @@ const entries = [
     row: 3,
     col: 5,
     answer: "WRR",
-    clue: "words of wisdom from an airbus"
+    clue: "words of wisdom from an airbus",
+    icon: "clues/plane.jpeg"
   },
   {
     number: 13,
@@ -101,7 +113,8 @@ const entries = [
     row: 14,
     col: 6,
     answer: "R2D2",
-    clue: 'best at singing the song "I feel good"'
+    clue: 'best at singing the song "I feel good"',
+    icon: "clues/r2d2.jpeg"
   },
   {
     number: 14,
@@ -109,7 +122,8 @@ const entries = [
     row: 9,
     col: 12,
     answer: "KERERU",
-    clue: "orb bird using fermented berries"
+    clue: "orb bird using fermented berries",
+    icon: "clues/berries.jpeg"
   },
   {
     number: 15,
@@ -117,7 +131,8 @@ const entries = [
     row: 5,
     col: 0,
     answer: "DINNERTOMORROWME",
-    clue: "hey just checking you cleared your calendar for dinner tomorrow right?"
+    clue: "hey just checking you cleared your calendar for dinner tomorrow right?",
+    icon: "clues/dinner.jpeg"
   },
   {
     number: 16,
@@ -125,7 +140,8 @@ const entries = [
     row: 9,
     col: 14,
     answer: "ENERGY",
-    clue: "she is no longer matching ____. She is simply removing herself from any situation that doesn't vibrate her soul."
+    clue: "she is no longer matching ____. She is simply removing herself from any situation that doesn't vibrate her soul.",
+    icon: "clues/shep.jpeg"
   },
   {
     number: 17,
@@ -133,7 +149,8 @@ const entries = [
     row: 5,
     col: 0,
     answer: "DEATH",
-    clue: "There is no escape. The only hope is the sweet relief of _____"
+    clue: "There is no escape. The only hope is the sweet relief of _____",
+    icon: "clues/star.jpeg"
   }
 ];
 
@@ -226,7 +243,15 @@ function renderClues() {
   entries.forEach(entry => {
     const li = document.createElement("li");
     li.value = entry.number;
-    li.textContent = entry.clue;
+
+    if (entry.icon) {
+      li.innerHTML = `
+        <img class="clue-image-icon" src="${entry.icon}" alt="" />
+        <span>${entry.clue}</span>
+      `;
+    } else {
+      li.textContent = entry.clue;
+    }
 
     if (entry.direction === "across") {
       acrossClues.appendChild(li);
