@@ -157,34 +157,28 @@ shuffleButton.addEventListener("click", () => {
 startGame();
 
 const missionCompleteButton = document.getElementById("mission-complete-button");
-const confirmationArea = document.getElementById("confirmation-area");
-const confirmCompleteButton = document.getElementById("confirm-complete-button");
-const codeArea = document.getElementById("code-area");
-const clearanceCode = document.getElementById("clearance-code");
+const codeEntryArea = document.getElementById("code-entry-area");
+const clearanceCodeInput = document.getElementById("clearance-code-input");
+const submitCodeButton = document.getElementById("submit-code-button");
+const codeMessage = document.getElementById("code-message");
 const nextMissionLink = document.getElementById("next-mission-link");
 
-function generateClearanceCode() {
-  const words = ["HUH", "PEBBLES", "KUDOS", "CASE", "AGENT"];
-  const word = words[Math.floor(Math.random() * words.length)];
-  const number = Math.floor(1000 + Math.random() * 9000);
-
-  return `${word}-${number}`;
-}
+const correctClearanceCode = "HUH-3007";
 
 missionCompleteButton.addEventListener("click", () => {
-  confirmationArea.classList.remove("hidden");
+  codeEntryArea.classList.remove("hidden");
   missionCompleteButton.style.display = "none";
 });
 
-confirmCompleteButton.addEventListener("click", () => {
-  const code = generateClearanceCode();
+submitCodeButton.addEventListener("click", () => {
+  const enteredCode = clearanceCodeInput.value.trim().toUpperCase();
 
-  clearanceCode.textContent = code;
-
-  localStorage.setItem("agentHuhClearanceCode", code);
-
-  nextMissionLink.href = `../places/?code=${encodeURIComponent(code)}`;
-
-  codeArea.classList.remove("hidden");
-  confirmationArea.style.display = "none";
+  if (enteredCode === correctClearanceCode) {
+    codeMessage.textContent = "Clearance accepted.";
+    nextMissionLink.classList.remove("hidden");
+    submitCodeButton.style.display = "none";
+    clearanceCodeInput.disabled = true;
+  } else {
+    codeMessage.textContent = "Clearance denied. Agent Pebbles is unimpressed.";
+  }
 });
