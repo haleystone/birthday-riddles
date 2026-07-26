@@ -121,7 +121,7 @@ h1 {
   }
 }
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .classified {
@@ -214,4 +214,8 @@ h1 {
   font-weight: bold;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+}
+.next-game-button.hidden,
+#code-entry-area.hidden {
+  display: none;
 }
