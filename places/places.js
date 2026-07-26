@@ -181,13 +181,111 @@ function showFinalMessage() {
   roundInfo.style.display = "none";
 
   finalMessage.style.display = "block";
-  finalMessage.innerHTML = `
-    <h2>You finished the place game!</h2>
-    <p>Final score: ${totalScore}</p>
-    <p>Birthday geography nonsense complete.</p>
-  `;
-}
 
+  finalMessage.innerHTML = `
+    <p class="classified">Case File 002 Complete</p>
+
+    <h2>Excellent work, Agent Huh?</h2>
+
+    <p>
+      You have successfully reconstructed key locations from the evidence archive.
+    </p>
+
+    <p>
+      Agent Pebbles is forced to acknowledge that your memory of weirdly specific
+      places is... acceptable.
+    </p>
+
+    <p class="clue">
+      Your next assignment is waiting back at headquarters.
+    </p>
+
+    <p class="flat-clue">
+      Return to the flat. The living room has been prepared for a cooperative operation.
+    </p>
+
+    <p class="game-clue">
+      Mission title:
+      <strong>SPLIT FICTION</strong>
+    </p>
+
+    <p class="small-note">
+      Further instructions will be issued once both agents are on the sofa.
+    </p>
+
+    <button id="mission-complete-button" class="mission-button">
+      Mission complete
+    </button>
+
+    <div id="code-entry-area" class="code-entry-area">
+      <p class="warning-text">
+        Enter clearance code to access Case File 003:
+      </p>
+
+      <input
+        id="clearance-code-input"
+        class="clearance-code-input"
+        type="text"
+        placeholder="Enter code"
+        autocomplete="off"
+      />
+
+      <button id="submit-code-button" class="code-button">
+        Unlock next mission
+      </button>
+
+      <p id="code-message" class="small-note"></p>
+    </div>
+
+    <a id="next-mission-link" class="next-game-button" href="../crossword/">
+      Proceed to Case File 003
+    </a>
+  `;
+
+  setupMissionCode();
+}
+function setupMissionCode() {
+  const missionCompleteButton = document.getElementById("mission-complete-button");
+  const codeEntryArea = document.getElementById("code-entry-area");
+  const clearanceCodeInput = document.getElementById("clearance-code-input");
+  const submitCodeButton = document.getElementById("submit-code-button");
+  const codeMessage = document.getElementById("code-message");
+  const nextMissionLink = document.getElementById("next-mission-link");
+
+  const correctClearanceCode = "SPLIT-2026";
+
+  codeEntryArea.style.display = "none";
+  nextMissionLink.style.display = "none";
+
+  missionCompleteButton.addEventListener("click", () => {
+    missionCompleteButton.style.display = "none";
+    codeEntryArea.style.display = "block";
+    clearanceCodeInput.focus();
+  });
+
+  submitCodeButton.addEventListener("click", () => {
+    checkClearanceCode();
+  });
+
+  clearanceCodeInput.addEventListener("keydown", event => {
+    if (event.key === "Enter") {
+      checkClearanceCode();
+    }
+  });
+
+  function checkClearanceCode() {
+    const enteredCode = clearanceCodeInput.value.trim().toUpperCase();
+
+    if (enteredCode === correctClearanceCode) {
+      codeMessage.textContent = "Clearance accepted.";
+      submitCodeButton.style.display = "none";
+      clearanceCodeInput.disabled = true;
+      nextMissionLink.style.display = "inline-block";
+    } else {
+      codeMessage.textContent = "Clearance denied. Agent Pebbles is unimpressed.";
+    }
+  }
+}
 function calculateDateScore(monthCorrect, yearCorrect) {
   let score = 0;
 
