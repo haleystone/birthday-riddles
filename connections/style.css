@@ -124,7 +124,60 @@ h1 {
   display: none;
 }
 
-.mission-button,
+.classified {
+  display: inline-block;
+  margin: 0 0 12px;
+  padding: 7px 13px;
+  border-radius: 999px;
+  background: #2f6f73;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.clue {
+  margin-top: 18px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.kudos-clue {
+  font-size: 20px;
+}
+
+.kudos-clue strong {
+  display: inline-block;
+  margin-left: 5px;
+  padding: 4px 10px;
+  border-radius: 8px;
+  background: #f6d365;
+}
+
+.small-note {
+  color: #666;
+  font-size: 14px;
+}
+
+.mission-button {
+  display: inline-block;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 20px;
+  background: #b85c38;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: 16px;
+}
+
+.mission-button:hover {
+  background: #98472a;
+}
+
+.code-button,
 .next-game-button {
   display: inline-block;
   border: none;
@@ -135,10 +188,10 @@ h1 {
   font-weight: bold;
   cursor: pointer;
   text-decoration: none;
-  margin-top: 16px;
+  margin-top: 12px;
 }
 
-.mission-button:hover,
+.code-button:hover,
 .next-game-button:hover {
   background: #24575a;
 }
@@ -148,13 +201,17 @@ h1 {
   font-weight: bold;
 }
 
-.clearance-code {
-  display: inline-block;
-  margin: 8px 0 14px;
-  padding: 10px 16px;
+.clearance-code-input {
+  display: block;
+  width: 220px;
+  max-width: 80%;
+  margin: 10px auto 8px;
+  padding: 11px 14px;
+  border: 2px solid #2f6f73;
   border-radius: 10px;
-  background: #f6d365;
-  font-size: 22px;
+  text-align: center;
+  font-size: 18px;
   font-weight: bold;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
