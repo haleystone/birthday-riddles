@@ -36,6 +36,15 @@ const submitButton = document.getElementById("submit-button");
 const deselectButton = document.getElementById("deselect-button");
 const shuffleButton = document.getElementById("shuffle-button");
 
+const missionCompleteButton = document.getElementById("mission-complete-button");
+const codeEntryArea = document.getElementById("code-entry-area");
+const clearanceCodeInput = document.getElementById("clearance-code-input");
+const submitCodeButton = document.getElementById("submit-code-button");
+const codeMessage = document.getElementById("code-message");
+const nextMissionLink = document.getElementById("next-mission-link");
+
+const correctClearanceCode = "HUH-3007";
+
 function startGame() {
   tiles = groups.flatMap(group =>
     group.words.map(word => ({
@@ -46,6 +55,9 @@ function startGame() {
 
   shuffleTiles();
   render();
+
+  codeEntryArea.style.display = "none";
+  nextMissionLink.style.display = "none";
 }
 
 function shuffleTiles() {
@@ -130,10 +142,10 @@ function submitGuess() {
     if (solvedGroups.length === groups.length) {
       message.textContent = "";
       finalMessage.style.display = "block";
-    
+
       document.querySelector(".controls").style.display = "none";
       mistakesText.style.display = "none";
-    
+    }
   } else {
     mistakes++;
     message.textContent = "Not quite.";
@@ -157,19 +169,8 @@ shuffleButton.addEventListener("click", () => {
   render();
 });
 
-startGame();
-
-const missionCompleteButton = document.getElementById("mission-complete-button");
-const codeEntryArea = document.getElementById("code-entry-area");
-const clearanceCodeInput = document.getElementById("clearance-code-input");
-const submitCodeButton = document.getElementById("submit-code-button");
-const codeMessage = document.getElementById("code-message");
-const nextMissionLink = document.getElementById("next-mission-link");
-
-const correctClearanceCode = "HUH-3007";
-
 missionCompleteButton.addEventListener("click", () => {
-  codeEntryArea.classList.remove("hidden");
+  codeEntryArea.style.display = "block";
   missionCompleteButton.style.display = "none";
 });
 
@@ -178,10 +179,12 @@ submitCodeButton.addEventListener("click", () => {
 
   if (enteredCode === correctClearanceCode) {
     codeMessage.textContent = "Clearance accepted.";
-    nextMissionLink.classList.remove("hidden");
+    nextMissionLink.style.display = "inline-block";
     submitCodeButton.style.display = "none";
     clearanceCodeInput.disabled = true;
   } else {
     codeMessage.textContent = "Clearance denied. Agent Pebbles is unimpressed.";
   }
 });
+
+startGame();
