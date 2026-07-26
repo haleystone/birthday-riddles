@@ -155,3 +155,36 @@ shuffleButton.addEventListener("click", () => {
 });
 
 startGame();
+
+const missionCompleteButton = document.getElementById("mission-complete-button");
+const confirmationArea = document.getElementById("confirmation-area");
+const confirmCompleteButton = document.getElementById("confirm-complete-button");
+const codeArea = document.getElementById("code-area");
+const clearanceCode = document.getElementById("clearance-code");
+const nextMissionLink = document.getElementById("next-mission-link");
+
+function generateClearanceCode() {
+  const words = ["HUH", "PEBBLES", "KUDOS", "CASE", "AGENT"];
+  const word = words[Math.floor(Math.random() * words.length)];
+  const number = Math.floor(1000 + Math.random() * 9000);
+
+  return `${word}-${number}`;
+}
+
+missionCompleteButton.addEventListener("click", () => {
+  confirmationArea.classList.remove("hidden");
+  missionCompleteButton.style.display = "none";
+});
+
+confirmCompleteButton.addEventListener("click", () => {
+  const code = generateClearanceCode();
+
+  clearanceCode.textContent = code;
+
+  localStorage.setItem("agentHuhClearanceCode", code);
+
+  nextMissionLink.href = `../places/?code=${encodeURIComponent(code)}`;
+
+  codeArea.classList.remove("hidden");
+  confirmationArea.style.display = "none";
+});
