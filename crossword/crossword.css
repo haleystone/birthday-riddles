@@ -117,8 +117,8 @@ body {
 }
 
 .clue-image-icon {
-  width: 42px;
-  height: 42px;
+  width: 64px;
+  height: 64px;
   object-fit: contain;
   flex-shrink: 0;
   border-radius: 8px;
