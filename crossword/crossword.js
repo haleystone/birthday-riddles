@@ -244,10 +244,13 @@ function renderClues() {
     const li = document.createElement("li");
     li.value = entry.number;
 
+    const row = document.createElement("div");
+    row.className = "clue-row";
+
     const clueText = document.createElement("span");
     clueText.textContent = entry.clue;
 
-    li.appendChild(clueText);
+    row.appendChild(clueText);
 
     if (entry.icon) {
       const hintButton = document.createElement("button");
@@ -269,9 +272,11 @@ function renderClues() {
         }
       });
 
-      li.appendChild(hintButton);
-      li.appendChild(img);
+      row.appendChild(hintButton);
+      row.appendChild(img);
     }
+
+    li.appendChild(row);
 
     if (entry.direction === "across") {
       acrossClues.appendChild(li);
