@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title> Connections</title>
+
+  <title>Yeah, you are good at this one right?</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -16,7 +17,7 @@
 
     <div id="grid" class="grid"></div>
 
-    <div class="controls">
+    <div id="controls" class="controls">
       <button id="submit-button">Submit</button>
       <button id="deselect-button" class="secondary">Deselect</button>
       <button id="shuffle-button" class="secondary">Shuffle</button>
@@ -25,14 +26,12 @@
     <div id="message" class="message"></div>
     <div id="mistakes" class="mistakes">Mistakes: 0</div>
 
-    <div id="final-message" class="final-message">
+    <section id="final-message" class="final-message">
       <p class="classified">Case File 001 Complete</p>
 
       <h2>Well done, Agent Huh?</h2>
 
-      <p>
-        You have successfully solved the animal intelligence test.
-      </p>
+      <p>You have successfully solved the animal intelligence test.</p>
 
       <p>
         Agent Pebbles will admit, grudgingly, that you may be useful after all.
@@ -55,7 +54,7 @@
         Mission complete
       </button>
 
-      <div id="code-entry-area" class="hidden">
+      <div id="code-entry-area" class="code-entry-area">
         <p class="warning-text">
           Enter clearance code to access Case File 002:
         </p>
@@ -75,12 +74,12 @@
         <p id="code-message" class="small-note"></p>
       </div>
 
-      <a id="next-mission-link" class="next-game-button hidden" href="../places/">
+      <a id="next-mission-link" class="next-game-button" href="../places/">
         Proceed to Case File 002
       </a>
-    </div>
+    </section>
   </main>
 
-  <script src="script.js?v=3"></script>
+  <script src="script.js?v=10"></script>
 </body>
 </html>
