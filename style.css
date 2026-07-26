@@ -32,16 +32,15 @@ body {
   text-transform: uppercase;
 }
 
-.huh-gif {
-  display: block;
-  width: 220px;
-  max-width: 80%;
+.huh-gif-wrap {
+  width: 190px;
+  max-width: 75%;
   margin: 0 auto 18px;
+  overflow: hidden;
   border-radius: 18px;
   border: 3px solid #2f6f73;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.22);
 }
-
 h1 {
   margin: 8px 0 10px;
   font-size: 42px;
