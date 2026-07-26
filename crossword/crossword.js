@@ -244,13 +244,33 @@ function renderClues() {
     const li = document.createElement("li");
     li.value = entry.number;
 
+    const clueText = document.createElement("span");
+    clueText.textContent = entry.clue;
+
+    li.appendChild(clueText);
+
     if (entry.icon) {
-      li.innerHTML = `
-        <img class="clue-image-icon" src="${entry.icon}" alt="" />
-        <span>${entry.clue}</span>
-      `;
-    } else {
-      li.textContent = entry.clue;
+      const hintButton = document.createElement("button");
+      hintButton.className = "hint-button";
+      hintButton.textContent = "Hint";
+
+      const img = document.createElement("img");
+      img.className = "clue-image-icon hidden";
+      img.src = entry.icon;
+      img.alt = "Hint image";
+
+      hintButton.addEventListener("click", () => {
+        img.classList.toggle("hidden");
+
+        if (img.classList.contains("hidden")) {
+          hintButton.textContent = "Hint";
+        } else {
+          hintButton.textContent = "Hide hint";
+        }
+      });
+
+      li.appendChild(hintButton);
+      li.appendChild(img);
     }
 
     if (entry.direction === "across") {
@@ -260,7 +280,6 @@ function renderClues() {
     }
   });
 }
-
 function moveToNextInput(input) {
   if (!input.value) {
     return;
