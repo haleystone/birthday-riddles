@@ -32,6 +32,7 @@ const message = document.getElementById("message");
 const mistakesText = document.getElementById("mistakes");
 const finalMessage = document.getElementById("final-message");
 
+const controls = document.getElementById("controls");
 const submitButton = document.getElementById("submit-button");
 const deselectButton = document.getElementById("deselect-button");
 const shuffleButton = document.getElementById("shuffle-button");
@@ -55,9 +56,6 @@ function startGame() {
 
   shuffleTiles();
   render();
-
-  codeEntryArea.style.display = "none";
-  nextMissionLink.style.display = "none";
 }
 
 function shuffleTiles() {
@@ -140,11 +138,7 @@ function submitGuess() {
     message.textContent = "Correct!";
 
     if (solvedGroups.length === groups.length) {
-      message.textContent = "";
-      finalMessage.style.display = "block";
-
-      document.querySelector(".controls").style.display = "none";
-      mistakesText.style.display = "none";
+      showFinalMission();
     }
   } else {
     mistakes++;
@@ -154,14 +148,39 @@ function submitGuess() {
   render();
 }
 
+function showFinalMission() {
+  message.textContent = "";
+  controls.style.display = "none";
+  mistakesText.style.display = "none";
+  finalMessage.style.display = "block";
+}
+
 function deselectAll() {
   selected = [];
   message.textContent = "";
   render();
 }
 
-submitButton.addEventListener("click", submitGuess);
+function showCodeEntry() {
+  missionCompleteButton.style.display = "none";
+  codeEntryArea.style.display = "block";
+  clearanceCodeInput.focus();
+}
 
+function checkClearanceCode() {
+  const enteredCode = clearanceCodeInput.value.trim().toUpperCase();
+
+  if (enteredCode === correctClearanceCode) {
+    codeMessage.textContent = "Clearance accepted.";
+    submitCodeButton.style.display = "none";
+    clearanceCodeInput.disabled = true;
+    nextMissionLink.style.display = "inline-block";
+  } else {
+    codeMessage.textContent = "Clearance denied. Agent Pebbles is unimpressed.";
+  }
+}
+
+submitButton.addEventListener("click", submitGuess);
 deselectButton.addEventListener("click", deselectAll);
 
 shuffleButton.addEventListener("click", () => {
@@ -169,21 +188,12 @@ shuffleButton.addEventListener("click", () => {
   render();
 });
 
-missionCompleteButton.addEventListener("click", () => {
-  codeEntryArea.style.display = "block";
-  missionCompleteButton.style.display = "none";
-});
+missionCompleteButton.addEventListener("click", showCodeEntry);
+submitCodeButton.addEventListener("click", checkClearanceCode);
 
-submitCodeButton.addEventListener("click", () => {
-  const enteredCode = clearanceCodeInput.value.trim().toUpperCase();
-
-  if (enteredCode === correctClearanceCode) {
-    codeMessage.textContent = "Clearance accepted.";
-    nextMissionLink.style.display = "inline-block";
-    submitCodeButton.style.display = "none";
-    clearanceCodeInput.disabled = true;
-  } else {
-    codeMessage.textContent = "Clearance denied. Agent Pebbles is unimpressed.";
+clearanceCodeInput.addEventListener("keydown", event => {
+  if (event.key === "Enter") {
+    checkClearanceCode();
   }
 });
 
