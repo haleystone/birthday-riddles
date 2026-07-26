@@ -219,3 +219,10 @@ h1 {
 #code-entry-area.hidden {
   display: none;
 }
+#next-mission-link {
+  display: none;
+}
+
+#code-entry-area {
+  display: none;
+}
