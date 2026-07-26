@@ -26,31 +26,57 @@
     <div id="mistakes" class="mistakes">Mistakes: 0</div>
 
     <div id="final-message" class="final-message">
-      <p class="classified">Case File 001 Complete</p>
+  <p class="classified">Case File 001 Complete</p>
 
-      <h2>Well done, Agent Huh?</h2>
+  <h2>Well done, Agent Huh?</h2>
 
-      <p>
-        You have successfully solved the animal intelligence test.
-      </p>
+  <p>
+    You have successfully solved the animal intelligence test.
+  </p>
 
-      <p>
-        Agent Pebbles will admit, grudgingly, that you may be useful after all.
-      </p>
+  <p>
+    Agent Pebbles will admit, grudgingly, that you may be useful after all.
+  </p>
 
-      <p class="clue">
-        Your next assignment is brunch.
-      </p>
+  <p class="clue">
+    Your next assignment is brunch.
+  </p>
 
-      <p class="kudos-clue">
-        Report to the place where praise is given:
-        <strong>KUDOS</strong>
-      </p>
+  <p class="kudos-clue">
+    Report to the place where praise is given:
+    <strong>KUDOS</strong>
+  </p>
 
-      <p class="small-note">
-        Further instructions will be issued after the evidence has been eaten.
-      </p>
-    </div>
+  <p class="small-note">
+    Further instructions will be issued after the evidence has been eaten.
+  </p>
+
+  <button id="mission-complete-button" class="mission-button">
+    Mission complete
+  </button>
+
+  <div id="confirmation-area" class="hidden">
+    <p class="warning-text">
+      Are you sure this mission is complete, Agent Huh?
+    </p>
+
+    <button id="confirm-complete-button" class="mission-button">
+      Yes, Agent Pebbles. Mission complete.
+    </button>
+  </div>
+
+  <div id="code-area" class="hidden">
+    <p class="small-note">
+      Clearance code generated:
+    </p>
+
+    <p id="clearance-code" class="clearance-code"></p>
+
+    <a id="next-mission-link" class="next-game-button" href="#">
+      Proceed to Case File 002
+    </a>
+  </div>
+</div>
   </main>
 
   <script src="script.js"></script>
