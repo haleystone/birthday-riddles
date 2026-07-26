@@ -153,3 +153,103 @@ button.secondary:hover {
     height: 380px;
   }
 }
+.classified {
+  display: inline-block;
+  margin: 0 0 12px;
+  padding: 7px 13px;
+  border-radius: 999px;
+  background: #2f6f73;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.clue {
+  margin-top: 18px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.flat-clue {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.game-clue {
+  font-size: 20px;
+}
+
+.game-clue strong {
+  display: inline-block;
+  margin-left: 5px;
+  padding: 4px 10px;
+  border-radius: 8px;
+  background: #f6d365;
+}
+
+.small-note {
+  color: #666;
+  font-size: 14px;
+}
+
+.mission-button {
+  display: inline-block;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 20px;
+  background: #b85c38;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 16px;
+}
+
+.mission-button:hover {
+  background: #98472a;
+}
+
+.code-entry-area {
+  display: none;
+  margin-top: 18px;
+}
+
+.warning-text {
+  margin-top: 18px;
+  font-weight: bold;
+}
+
+.clearance-code-input {
+  display: block;
+  width: 220px;
+  max-width: 80%;
+  margin: 10px auto 8px;
+  padding: 11px 14px;
+  border: 2px solid #2f6f73;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.code-button,
+.next-game-button {
+  display: inline-block;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 20px;
+  background: #2f6f73;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: 12px;
+}
+
+.code-button:hover,
+.next-game-button:hover {
+  background: #24575a;
+}
