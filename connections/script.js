@@ -130,7 +130,10 @@ function submitGuess() {
     if (solvedGroups.length === groups.length) {
       message.textContent = "";
       finalMessage.style.display = "block";
-    }
+    
+      document.querySelector(".controls").style.display = "none";
+      mistakesText.style.display = "none";
+    
   } else {
     mistakes++;
     message.textContent = "Not quite.";
