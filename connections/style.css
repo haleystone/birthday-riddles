@@ -120,17 +120,41 @@ h1 {
     min-height: 64px;
   }
 }
+.hidden {
+  display: none;
+}
+
+.mission-button,
 .next-game-button {
   display: inline-block;
-  margin-top: 16px;
-  padding: 12px 20px;
+  border: none;
   border-radius: 999px;
+  padding: 12px 20px;
   background: #2f6f73;
   color: white;
+  font-weight: bold;
+  cursor: pointer;
   text-decoration: none;
+  margin-top: 16px;
+}
+
+.mission-button:hover,
+.next-game-button:hover {
+  background: #24575a;
+}
+
+.warning-text {
+  margin-top: 18px;
   font-weight: bold;
 }
 
-.next-game-button:hover {
-  background: #24575a;
+.clearance-code {
+  display: inline-block;
+  margin: 8px 0 14px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: #f6d365;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 0.08em;
 }
