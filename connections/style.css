@@ -65,11 +65,6 @@ h1 {
   color: white;
 }
 
-.tile:disabled {
-  cursor: default;
-  opacity: 0.4;
-}
-
 .controls {
   display: flex;
   justify-content: center;
@@ -105,23 +100,10 @@ h1 {
 .final-message {
   display: none;
   margin-top: 25px;
-  padding: 22px;
+  padding: 26px;
   border-radius: 18px;
   background: white;
   box-shadow: 0 2px 8px rgba(0,0,0,0.12);
-}
-
-@media (max-width: 600px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .tile {
-    min-height: 64px;
-  }
-}
-.hidden {
-  display: none !important;
 }
 
 .classified {
@@ -169,7 +151,6 @@ h1 {
   color: white;
   font-weight: bold;
   cursor: pointer;
-  text-decoration: none;
   margin-top: 16px;
 }
 
@@ -177,23 +158,9 @@ h1 {
   background: #98472a;
 }
 
-.code-button,
-.next-game-button {
-  display: inline-block;
-  border: none;
-  border-radius: 999px;
-  padding: 12px 20px;
-  background: #2f6f73;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  text-decoration: none;
-  margin-top: 12px;
-}
-
-.code-button:hover,
-.next-game-button:hover {
-  background: #24575a;
+.code-entry-area {
+  display: none;
+  margin-top: 18px;
 }
 
 .warning-text {
@@ -215,14 +182,36 @@ h1 {
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
-.next-game-button.hidden,
-#code-entry-area.hidden {
-  display: none;
+
+.code-button,
+.next-game-button {
+  display: inline-block;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 20px;
+  background: #2f6f73;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: 12px;
 }
-#next-mission-link {
+
+.code-button:hover,
+.next-game-button:hover {
+  background: #24575a;
+}
+
+.next-game-button {
   display: none;
 }
 
-#code-entry-area {
-  display: none;
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tile {
+    min-height: 64px;
+  }
 }
