@@ -33,13 +33,19 @@ body {
 }
 
 .huh-gif-wrap {
-  width: 190px;
-  max-width: 75%;
+  width: 160px;
+  height: 285px;
+  max-width: 70%;
   margin: 0 auto 18px;
   overflow: hidden;
   border-radius: 18px;
   border: 3px solid #2f6f73;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.22);
+}
+
+.huh-gif-wrap .tenor-gif-embed {
+  width: 100% !important;
+  height: 100% !important;
 }
 h1 {
   margin: 8px 0 10px;
