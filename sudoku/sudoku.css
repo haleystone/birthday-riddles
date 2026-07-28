@@ -1,0 +1,158 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f7f3ee;
+  color: #2b2b2b;
+  display: flex;
+  justify-content: center;
+  padding: 40px 14px;
+}
+
+.game {
+  max-width: 720px;
+  width: 100%;
+  text-align: center;
+}
+
+.classified {
+  display: inline-block;
+  margin: 0 0 12px;
+  padding: 7px 13px;
+  border-radius: 999px;
+  background: #2f6f73;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  color: #666;
+}
+
+.sudoku-board {
+  display: grid;
+  grid-template-columns: repeat(9, 44px);
+  grid-template-rows: repeat(9, 44px);
+  gap: 0;
+  width: fit-content;
+  margin: 26px auto;
+  border: 3px solid #2b2b2b;
+  background: #2b2b2b;
+}
+
+.cell {
+  width: 44px;
+  height: 44px;
+  box-sizing: border-box;
+  border: 1px solid #aaa;
+  background: white;
+}
+
+.cell input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+.cell input:focus {
+  outline: 2px solid #2f6f73;
+  z-index: 2;
+  position: relative;
+}
+
+.cell.given {
+  background: #eee7dd;
+}
+
+.cell.given input {
+  color: #111;
+}
+
+.cell.incorrect {
+  background: #ffd6d6;
+}
+
+.cell.correct {
+  background: #d5f0d0;
+}
+
+.cell:nth-child(3n) {
+  border-right: 3px solid #2b2b2b;
+}
+
+.cell:nth-child(9n) {
+  border-right: 1px solid #aaa;
+}
+
+.cell:nth-child(n+19):nth-child(-n+27),
+.cell:nth-child(n+46):nth-child(-n+54) {
+  border-bottom: 3px solid #2b2b2b;
+}
+
+.controls {
+  margin-top: 22px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+button {
+  border: none;
+  border-radius: 999px;
+  padding: 11px 20px;
+  background: #2f6f73;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #24575a;
+}
+
+button.secondary {
+  background: #8d8d8d;
+}
+
+button.secondary:hover {
+  background: #707070;
+}
+
+.message {
+  min-height: 28px;
+  font-weight: bold;
+  margin-top: 16px;
+}
+
+.final-message {
+  display: none;
+  margin-top: 24px;
+  padding: 22px;
+  border-radius: 18px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+@media (max-width: 520px) {
+  .sudoku-board {
+    grid-template-columns: repeat(9, 34px);
+    grid-template-rows: repeat(9, 34px);
+  }
+
+  .cell {
+    width: 34px;
+    height: 34px;
+  }
+
+  .cell input {
+    font-size: 18px;
+  }
+}
