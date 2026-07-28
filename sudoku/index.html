@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Bonus Sudoku</title>
+  <link rel="stylesheet" href="sudoku.css" />
+</head>
+
+<body>
+  <main class="game">
+    <p class="classified">Bonus Brain Game</p>
+
+    <h1>Sudoku</h1>
+    <p class="subtitle">
+      Optional suffering. Fill the grid so every row, column, and box contains 1–9.
+    </p>
+
+    <section id="sudoku-board" class="sudoku-board"></section>
+
+    <div class="controls">
+      <button id="check-button">Check</button>
+      <button id="clear-button" class="secondary">Clear guesses</button>
+      <button id="solution-button" class="secondary">Show solution</button>
+    </div>
+
+    <p id="message" class="message"></p>
+
+    <section id="final-message" class="final-message">
+      <h2>Sudoku complete!</h2>
+      <p>Agent Huh? remains dangerously competent.</p>
+    </section>
+  </main>
+
+  <script src="sudoku.js"></script>
+</body>
+</html>
