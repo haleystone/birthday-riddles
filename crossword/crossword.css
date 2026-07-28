@@ -185,3 +185,30 @@ button.secondary {
     font-size: 15px;
   }
 }
+
+.classified {
+  display: inline-block;
+  margin: 0 0 12px;
+  padding: 7px 13px;
+  border-radius: 999px;
+  background: #2f6f73;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.small-note {
+  color: #666;
+  font-size: 14px;
+}
+
+.birthday-menu {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  margin: 22px auto 10px;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+}
