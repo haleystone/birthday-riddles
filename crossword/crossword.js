@@ -324,6 +324,9 @@ function checkAnswers() {
   if (correctCount === totalCount) {
     message.textContent = "Correct! Crossword complete.";
     finalMessage.style.display = "block";
+  
+    document.querySelector(".crossword-layout").style.display = "none";
+    document.querySelector(".controls").style.display = "none";
   } else {
     message.textContent = `${correctCount} / ${totalCount} letters correct.`;
     finalMessage.style.display = "none";
