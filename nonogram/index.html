@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Nonogram</title>
+  <link rel="stylesheet" href="nonogram.css" />
+</head>
+
+<body>
+  <main class="game">
+    <p class="classified">Bonus Brain Game</p>
+
+    <h1>Nonogram</h1>
+    <p class="subtitle">
+      Decode the penguin object. Fill the correct squares using the number clues.
+    </p>
+
+    <section id="nonogram" class="nonogram"></section>
+
+    <div class="controls">
+      <button id="check-button">Check</button>
+      <button id="clear-button" class="secondary">Clear</button>
+      <button id="solution-button" class="secondary">Show solution</button>
+    </div>
+
+    <p id="message" class="message"></p>
+
+    <section id="final-message" class="final-message">
+      <h2>Penguin found!</h2>
+      <p>Agent Huh? has successfully identified the tiny suspect.</p>
+    </section>
+  </main>
+
+  <script src="nonogram.js"></script>
+</body>
+</html>
