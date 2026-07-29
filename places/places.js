@@ -1,27 +1,51 @@
 const rounds = [
   {
     image: "images/littlem.png",
-    placeName: "The Little Marionette - where we first met",
+    placeName: "The Little Marionette - where we first met.",
     latitude: -33.91699418928862,
     longitude: 151.23492268042054,
     month: "March",
     year: "2022"
   },
   {
+    image: "images/kangaroovalley.jpg",
+    placeName: "Kangaroo Valley - our first trip together. Where I became a burnt tomato.",
+    latitude: -34.72671865078512,
+    longitude: 150.52079187797955,
+    month: "December",
+    year: "2022"
+  },
+  {
+    image: "images/nyc.jpeg",
+    placeName: "Your first really shit diner coffee. Look how happy you were before trying it.",
+    latitude: 40.74625132930407,
+    longitude: -73.94592080185129,
+    month: "July",
+    year: "2023"
+  },
+  {
+    image: "images/wentworth_falls.jpeg",
+    placeName: "Your birthday in 2023 featuring hobbles and his boot.",
+    latitude: -33.725375622345716,
+    longitude: 150.36914627447203,
+    month: "May",
+    year: "2023"
+  },
+  {
     image: "images/library.png",
-    placeName: "Lionel Bowen Library - where we declared our relationship",
+    placeName: "Lionel Bowen Library - where we declared our relationship. The guy was just so sweet.",
     latitude: -33.93814942489405,
     longitude: 151.2381681981487,
     month: "May",
     year: "2024"
   },
-  {
-    image: "images/kangaroovalley.jpg",
-    placeName: "Kangaroo Valley - our first trip together",
-    latitude: -34.72671865078512,
-    longitude: 150.52079187797955,
-    month: "December",
-    year: "2022"
+    {
+    image: "images/pigmentsquad.jpeg",
+    placeName: "Our trip to Melbourne and where we spent a majority of the day for my birthday.",
+    latitude: -37.81192722251604, 
+    longitude: 144.9648726246824,
+    month: "February",
+    year: "2025"
   },
   {
     image: "images/travelscotland.jpeg",
