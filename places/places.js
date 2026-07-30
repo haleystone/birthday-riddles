@@ -20,7 +20,7 @@ const rounds = [
     placeName: "Your first really shit diner coffee. Look how happy you were before trying it.",
     latitude: 40.74625132930407,
     longitude: -73.94592080185129,
-    month: "July",
+    month: "May",
     year: "2023"
   },
   {
@@ -28,7 +28,7 @@ const rounds = [
     placeName: "Your birthday in 2023 featuring hobbles and his boot.",
     latitude: -33.725375622345716,
     longitude: 150.36914627447203,
-    month: "May",
+    month: "July",
     year: "2023"
   },
   {
